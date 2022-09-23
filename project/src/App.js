@@ -13,6 +13,9 @@ function App() {
   const [data, setData] = useState([]);
   const [fetchStatus, setFetchStatus] = useState(FETCH_STATUS.INITIAL);
 
+  const handleFetchAgain = () => {
+    fetchGet();
+  };
   const fetchGet = useCallback(async () => {
     try {
       setFetchStatus(FETCH_STATUS.LOADING);
@@ -54,6 +57,19 @@ function App() {
   useEffect(() => {
     if (fetchStatus === FETCH_STATUS.INITIAL) fetchGet();
   }, [fetchStatus, fetchGet]);
+  if (fetchStatus === FETCH_STATUS.ERROR)
+    return (
+      <div>
+        <h2>Error get data</h2>
+        <button onClick={() => handleFetchAgain()}>try again</button>
+      </div>
+    );
+  if (fetchStatus === FETCH_STATUS.LOADING)
+    return (
+      <div>
+        <h1>loading...</h1>
+      </div>
+    );
 
   return (
     <div>
