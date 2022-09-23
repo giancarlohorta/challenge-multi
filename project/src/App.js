@@ -72,7 +72,7 @@ function App() {
     );
 
   return (
-    <div>
+    <div className="App">
       {data.map(
         ({
           id,
@@ -86,12 +86,12 @@ function App() {
           posts,
         }) => {
           return (
-            <div key={id}>
+            <div key={id} className="User">
               <div>
                 <h2>{name}</h2>
                 <p>{username}</p>
               </div>
-              <div>
+              <div className="PersonalData">
                 <h2>Personal Data</h2>
                 <p>{email}</p>
                 <p>{address}</p>
@@ -99,12 +99,12 @@ function App() {
                 <p>{website}</p>
                 <p>{company}</p>
               </div>
-              <div>
+              <div className="Posts">
                 <h2>Posts</h2>
                 <ul>
                   {posts.map((post) => {
                     return (
-                      <li key={post.id}>
+                      <li key={post.id} className="Post">
                         <h3>{post.title}</h3>
                         <p>{post.body}</p>
                       </li>
