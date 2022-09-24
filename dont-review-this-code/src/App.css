@@ -1,0 +1,14 @@
+.App {
+  max-width: 1200px;
+  width: 100%;
+  margin: 2rem auto;
+  padding: 0 0.5rem;
+}
+.User,
+.Post {
+  margin-bottom: 2rem;
+}
+.Posts,
+.PersonalData {
+  margin-top: 1rem;
+}
